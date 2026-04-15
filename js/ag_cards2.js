@@ -55,7 +55,8 @@ var squareGame = {
    }
 };
 
-
+gameTotal: 0,
+winTotal: 50,
 
 
 
