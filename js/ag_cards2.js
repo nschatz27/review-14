@@ -52,17 +52,24 @@ var squareGame = {
          columnHand.cards[i] = this.cardGrid[i].cards[index];
       }
       return columnHand.handPoints();
-   }
+   },
+
+   gameTotal: 0,
+   winTotal: 50,
+   gameResult: function() {
+      if (this.gameTotal >= this.winTotal) {
+         return "Winner";
+      } else {
+         return "No Winner";
+      }
+   },
 };
 
-gameTotal: 0,
-winTotal: 50,
 
-
-
-
-
-
+/* Method to insert a card into a poker hand at a specified index */
+pokerHand.prototype.insertCard = function (card, index) {
+   this.cards[index] = card;
+};
 
 /* ------- Poker Style Custom Objects ---------- */
 
@@ -79,7 +86,7 @@ function pokerCard(cardSuit, cardRank) {
 /* Method to reference the image source file for a card */
 pokerCard.prototype.cardImage = function() {
   var suitAbbr = this.suit.substring(0, 1).toLowerCase();
-  return suitAbbr + this.rankValue + ".png";
+  return "./png/" + suitAbbr + this.rankValue + ".png";
 };
 
 /* Method to replace a card with a one from the deck */
