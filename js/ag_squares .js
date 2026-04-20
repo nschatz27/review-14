@@ -34,7 +34,7 @@ function playPokerSquares() {
          colSumCells[i].textContent = "";
       }
       for (var i = 0; i < cardImages.length; i++) {
-         cardImages[i].src = "../png/ag_trans.gif";
+         cardImages[i].src = "./png/ag_trans.gif";
       }
       var myDeck = new pokerDeck();
       myDeck.shuffle();
